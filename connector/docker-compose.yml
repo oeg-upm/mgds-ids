@@ -6,13 +6,13 @@ services:
       - odc-frontend
       - odc-manager
     ports:
-      - 80:80
+      - 60080:80
     networks:
       - ids_connector
 
   odc-adapter-ckan:
     build: ./odc-adapter-ckan
-    container_name: odc-adapter-ckan
+#    container_name: odc-adapter-ckan
     volumes:
       - odc-adapter-ckan_repo:/ids/repo
     depends_on:
@@ -27,7 +27,7 @@ services:
 
   odc-adapter-postgres:
     build: ./odc-adapter-postgres
-    container_name: odc-adapter-postgres
+#    container_name: odc-adapter-postgres
     volumes:
       - odc-adapter-postgres_repo:/ids/repo
     depends_on:
@@ -70,13 +70,14 @@ services:
     networks:
       - ids_docker
 
-  db:
-    image: postgres
+  odc-postgres:
+#    image: postgres
+    build: ./odc-postgres
     volumes:
-      - ./backend/postgres/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+#      - ./config/postgres/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
       - odc-manager-database:/var/lib/postgresql/data
     environment:
-      - POSTGRES_PASSWORD=123456
+      - POSTGRES_PASSWORD=ids
       - DATABASE_USER=ids
       - DATABASE_USER_PW=ids
     networks:
@@ -86,16 +87,16 @@ services:
     build: ./odc-manager
     volumes:
       - odc-manager_repo:/ids/repo
-      - ./certs:/ids/certs
+      - ./config/certs:/ids/certs
     ports:
       - 8090:8080
     depends_on:
-      - db
+      - odc-postgres
     environment:
       - FRONTEND_CONFIG={"username":"admin","password":"admin"}
-      - DB_CONFIG={"host":"db","port":5432,"database":"ids","user":"ids","password":"ids"}
+      - DB_CONFIG={"host":"odc-postgres","port":5432,"database":"ids","user":"ids","password":"123456"}
       - CONFIG_MANAGER_CONFIG={"apikey":"yourapikey", "host":"odc-config-manager","port":8080}
-      - AUTH_CONFIG={"keystorename":"my-keystore.jks", "keystorepassword":"my-password", "keystorealias":"connector-alias","truststorename":"truststore-name","dapsurl":"https://daps.aisec.fraunhofer.de/v2/", "dapsissuer":"https://daps.aisec.fraunhofer.de"}
+      - AUTH_CONFIG={"keystorename":"keystore.jks", "keystorepassword":"123456", "keystorealias":"subca","truststorename":"keystore.jks","dapsurl":"https://daps.aisec.fraunhofer.de/v2/", "dapsissuer":"https://daps.aisec.fraunhofer.de"}
       - REPOSITORY=/ids/repo/
       - INIT=true
       - SERVICE_PORT=8080

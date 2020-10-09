@@ -19,3 +19,6 @@
 [submodule "connector/odc-frontend"]
 	path = connector/odc-frontend
 	url = https://github.com/daniel-dona/odc-frontend
+[submodule "connector/odc-postgres"]
+	path = connector/odc-postgres
+	url = https://github.com/daniel-dona/odc-postgres.git
