@@ -1,6 +1,3 @@
-[submodule "broker/odc-manager"]
-	path = broker/odc-manager
-	url = https://github.com/daniel-dona/odc-manager
 [submodule "connector/odc-adapter-ckan"]
 	path = connector/odc-adapter-ckan
 	url = https://github.com/daniel-dona/odc-adapter-ckan
