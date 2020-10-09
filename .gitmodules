@@ -16,3 +16,6 @@
 [submodule "odc-frontend"]
 	path = connector/odc-frontend
 	url = https://github.com/public-data-space/odc-frontend
+[submodule "broker/odc-manager"]
+	path = broker/odc-manager
+	url = https://github.com/public-data-space/odc-manager
