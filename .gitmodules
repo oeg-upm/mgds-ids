@@ -1,0 +1,18 @@
+[submodule "odc-adapter-ckan"]
+	path = odc-adapter-ckan
+	url = https://github.com/public-data-space/odc-adapter-ckan
+[submodule "odc-adapter-postgres"]
+	path = odc-adapter-postgres
+	url = https://github.com/public-data-space/odc-adapter-postgres
+[submodule "odc-config-manager"]
+	path = odc-config-manager
+	url = https://github.com/public-data-space/odc-config-manager
+[submodule "odc-service-docker"]
+	path = odc-service-docker
+	url = https://github.com/public-data-space/odc-service-docker
+[submodule "odc-manager"]
+	path = odc-manager
+	url = https://github.com/public-data-space/odc-manager
+[submodule "odc-frontend"]
+	path = odc-frontend
+	url = https://github.com/public-data-space/odc-frontend
