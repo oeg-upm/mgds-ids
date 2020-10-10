@@ -19,3 +19,15 @@
 [submodule "connector/odc-postgres"]
 	path = connector/odc-postgres
 	url = https://github.com/daniel-dona/odc-postgres.git
+[submodule "broker/odb-manager"]
+	path = broker/odb-manager
+	url = https://github.com/daniel-dona/odb-manager
+[submodule "broker/piveau-ui"]
+	path = broker/piveau-ui
+	url = https://github.com/daniel-dona/piveau-ui
+[submodule "broker/piveau-hub"]
+	path = broker/piveau-hub
+	url = https://github.com/daniel-dona/piveau-hub
+[submodule "broker/piveau-hub-search"]
+	path = broker/piveau-hub-search
+	url = https://github.com/daniel-dona/piveau-hub-search
