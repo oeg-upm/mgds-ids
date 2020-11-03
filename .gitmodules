@@ -31,3 +31,6 @@
 [submodule "broker/piveau-hub-search"]
 	path = broker/piveau-hub-search
 	url = https://github.com/daniel-dona/piveau-hub-search
+[submodule "broker/odb-postgres"]
+	path = broker/odb-postgres
+	url = https://github.com/daniel-dona/odb-postgres

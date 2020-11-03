@@ -1,9 +1,9 @@
 version: "3.5"
 services:
   nginx:
-    build: nginx
+    build: ./nginx
     ports:
-      - 80:80
+      - 60081:80
 
   odb-manager:
     build: ./odb-manager
@@ -15,10 +15,10 @@ services:
       - DB_CONFIG={"host":"postgres","port":5432,"username":"ids","database":"ids","password":"ids"}
       - VIRTUOSO_CONFIG={"address":"http://virtuoso:8890","dataEndpoint":"/sparql-graph-crud-auth","queryEndpoint":"/sparql","user":"dba","password":"test123456"}
       - BROKER_CONFIG={"baseUrl":"http://ids.fokus.fraunhofer.de","maintainer":"http://ids.fokus.fraunhofer.de#maintainer","curator":"http://ids.fokus.fraunhofer.de#curator"}
-      - AUTH_CONFIG={"keystorename":"keystorename", "keystorepassword":"keystorepassword", "keystorealias":"brokerAlias","truststorename":"truststoreName","dapsurl":"https://daps.aisec.fraunhofer.de/v2/", "dapsissuer":"https://daps.aisec.fraunhofer.de"}
+      - AUTH_CONFIG={"keystorename":"keystore.jks", "keystorepassword":"123456", "keystorealias":"subca","truststorename":"keystore.jks","dapsurl":"https://daps.aisec.fraunhofer.de/v2/", "dapsissuer":"https://daps.aisec.fraunhofer.de"}
       - SERVICE_PORT=8080
     depends_on:
-      - postgres
+      - odb-postgres
       - piveau-hub
       - virtuoso
     ports:
@@ -56,10 +56,10 @@ services:
       - PIVEAU_HUB_API_KEY=yourapikey
       - PIVEAU_HUB_ELASTICSEARCH_ADDRESS=http://elasticsearch:9200
       - PIVEAU_HUB_SHELL_CONFIG={"http":{},"telnet":{}}
-      - JAVA_OPTS=-Xms12g -Xmx16g
+      - JAVA_OPTS=-Xms2g -Xmx4g
 
   piveau-search:
-    build: ./piveau-search 
+    build: ./piveau-hub-search 
 #   image: publicdataspaces/piveau-hub-search:latest
     logging:
       options:
@@ -109,8 +109,8 @@ services:
     environment:
       - DBA_PASSWORD=test123456
 
-  odc-postgres:
-    build: ./odc-postgres
+  odb-postgres:
+    build: ./odb-postgres
 #    image: postgres
     logging:
       options:
