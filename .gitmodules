@@ -34,3 +34,6 @@
 [submodule "broker/odb-postgres"]
 	path = broker/odb-postgres
 	url = https://github.com/daniel-dona/odb-postgres
+[submodule "misc/ids-utils"]
+	path = misc/ids-utils
+	url = https://github.com/MGDS-development/ids-utils
