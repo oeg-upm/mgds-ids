@@ -37,3 +37,6 @@
 [submodule "misc/ids-utils"]
 	path = misc/ids-utils
 	url = https://github.com/MGDS-development/ids-utils
+[submodule "misc/ids-fakeauth"]
+	path = misc/ids-fakeauth
+	url = https://github.com/MGDS-development/ids-fakeauth
