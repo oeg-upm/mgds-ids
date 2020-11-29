@@ -3,7 +3,7 @@ services:
   nginx:
     build: ./nginx
     ports:
-      - 60081:80
+      - 60082:80
 
   odb-manager:
     build: ./odb-manager
@@ -12,11 +12,11 @@ services:
       - ./config/certs:/ids/certs
       - ./file-uploads:/file-uploads
     environment:
-      - PIVEAU_HUB_CONFIG={"host":"piveau-hub","port":8080,"apiKey":"yourapikey"}
+      - PIVEAU_HUB_CONFIG={"host":"piveau-hub","port":8080,"apiKey":"8w3q75nhqa890563478956a78045"}
       - DB_CONFIG={"host":"odb-postgres","port":5432,"username":"ids","database":"ids","password":"ids"}
       - VIRTUOSO_CONFIG={"address":"http://virtuoso:8890","dataEndpoint":"/sparql-graph-crud-auth","queryEndpoint":"/sparql","user":"dba","password":"test123456"}
-      - BROKER_CONFIG={"baseUrl":"https://broker.mgds.xnor.ga/browse/","maintainer":"https://broker.mgds.xnor.ga/browse/#maintainer","curator":"https://broker.mgds.xnor.ga/browse/#curator"}
-      - AUTH_CONFIG={"keystorename":"test-cert-keystore.jks", "keystorepassword":"123456", "keystorealias":"1","truststorename":"test-cert-truststore.jks","dapsurl":"https://auth.mgds.xnor.ga/v2/", "dapsissuer":"https://auth.mgds.xnor.ga"}
+      - BROKER_CONFIG={"baseUrl":"https://broker-mgds.oeg.fi.upm.es/browse/","maintainer":"https://broker-mgds.oeg.fi.upm.es/browse/#maintainer","curator":"https://broker-mgds.oeg.fi.upm.es/browse/#curator"}
+      - AUTH_CONFIG={"keystorename":"test-cert-keystore.jks", "keystorepassword":"123456", "keystorealias":"1","truststorename":"test-cert-truststore.jks","dapsurl":"https://oeg.fi.upm.es/auth/v2/", "dapsissuer":"https://mgds.oeg.fi.upm.es"}
       - SERVICE_PORT=8080
     depends_on:
       - odb-postgres
@@ -52,9 +52,9 @@ services:
       - PIVEAU_HUB_LOAD_VOCABULARIES_FETCH=false
       - PIVEAU_TRIPLESTORE_CONFIG={"address":"http://piveau_virtuoso:8890", "username":"dba","password":"test123456"}
       - PIVEAU_HUB_VALIDATOR={"enabled":true}
-      - PIVEAU_HUB_SEARCH_SERVICE={"url":"piveau-search","port":8080,"api_key":"myapikey"}
+      - PIVEAU_HUB_SEARCH_SERVICE={"url":"piveau-search","port":8080,"api_key":"8w3q75nhqa890563478956a78045"}
       - PIVEAU_TRANSLATION_SERVICE={"enable":false}
-      - PIVEAU_HUB_API_KEY=yourapikey
+      - PIVEAU_HUB_API_KEY=8w3q75nhqa890563478956a78045
       - PIVEAU_HUB_ELASTICSEARCH_ADDRESS=http://elasticsearch:9200
       - PIVEAU_HUB_SHELL_CONFIG={"http":{},"telnet":{}}
       - JAVA_OPTS=-Xms2g -Xmx4g
@@ -71,7 +71,7 @@ services:
     depends_on:
       - elasticsearch
     environment:
-      - PIVEAU_HUB_SEARCH_API_KEY=myapikey
+      - PIVEAU_HUB_SEARCH_API_KEY=8w3q75nhqa890563478956a78045
       - PIVEAU_HUB_SEARCH_ES_CONFIG={"host":"elasticsearch","port":9200,"circuitBreakerTries":15}
       - PIVEAU_HUB_SEARCH_GAZETTEER_CONFIG={"url":"http://doesnotmatter.eu"}
 

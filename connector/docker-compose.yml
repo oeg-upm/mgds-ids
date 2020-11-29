@@ -6,7 +6,7 @@ services:
       - odc-frontend
       - odc-manager
     ports:
-      - 60080:80
+      - 60081:80
     networks:
       - ids_connector
 
