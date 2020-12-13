@@ -1,39 +1,39 @@
 [submodule "connector/odc-adapter-ckan"]
 	path = connector/odc-adapter-ckan
-	url = https://github.com/daniel-dona/odc-adapter-ckan
+	url = https://github.com/MGDS-development/odc-adapter-ckan
 [submodule "connector/odc-adapter-postgres"]
 	path = connector/odc-adapter-postgres
-	url = https://github.com/daniel-dona/odc-adapter-postgres
+	url = https://github.com/MGDS-development/odc-adapter-postgres
 [submodule "connector/odc-config-manager"]
 	path = connector/odc-config-manager
-	url = https://github.com/daniel-dona/odc-config-manager
+	url = https://github.com/MGDS-development/odc-config-manager
 [submodule "connector/odc-service-docker"]
 	path = connector/odc-service-docker
-	url = https://github.com/daniel-dona/odc-service-docker
+	url = https://github.com/MGDS-development/odc-service-docker
 [submodule "connector/odc-manager"]
 	path = connector/odc-manager
-	url = https://github.com/daniel-dona/odc-manager
+	url = https://github.com/MGDS-development/odc-manager
 [submodule "connector/odc-frontend"]
 	path = connector/odc-frontend
-	url = https://github.com/daniel-dona/odc-frontend
+	url = https://github.com/MGDS-development/odc-frontend
 [submodule "connector/odc-postgres"]
 	path = connector/odc-postgres
-	url = https://github.com/daniel-dona/odc-postgres.git
+	url = https://github.com/MGDS-development/odc-postgres.git
 [submodule "broker/odb-manager"]
 	path = broker/odb-manager
-	url = https://github.com/daniel-dona/odb-manager
+	url = https://github.com/MGDS-development/odb-manager
 [submodule "broker/piveau-ui"]
 	path = broker/piveau-ui
-	url = https://github.com/daniel-dona/piveau-ui
+	url = https://github.com/MGDS-development/piveau-ui
 [submodule "broker/piveau-hub"]
 	path = broker/piveau-hub
-	url = https://github.com/daniel-dona/piveau-hub
+	url = https://github.com/MGDS-development/piveau-hub
 [submodule "broker/piveau-hub-search"]
 	path = broker/piveau-hub-search
-	url = https://github.com/daniel-dona/piveau-hub-search
+	url = https://github.com/MGDS-development/piveau-hub-search
 [submodule "broker/odb-postgres"]
 	path = broker/odb-postgres
-	url = https://github.com/daniel-dona/odb-postgres
+	url = https://github.com/MGDS-development/odb-postgres
 [submodule "misc/ids-utils"]
 	path = misc/ids-utils
 	url = https://github.com/MGDS-development/ids-utils
